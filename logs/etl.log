@@ -98,3 +98,113 @@
 2025-03-20 09:42:08,497 - __main__ - INFO - Consultation data migration complete
 2025-03-20 09:42:08,499 - root - INFO - ETL application completed in 40.21 seconds
 2025-03-20 09:42:08,499 - root - INFO - Migration statistics: {'client': {'person_extracted': 2355, 'person_loaded': 2355, 'identification_loaded': 1978, 'phone_loaded': 2116}, 'consultation': {'patient_extracted': 2355, 'art_loaded': 2355}}
+2025-03-20 11:13:47,863 - root - INFO - Logging initialized at 2025-03-20 11:13:47.863941 with level INFO
+2025-03-20 11:13:47,864 - root - INFO - Starting ETL application at 2025-03-20 11:13:47
+2025-03-20 11:13:47,864 - etl.manager - INFO - Setting up database connections
+2025-03-20 11:13:47,864 - etl.manager - INFO - Starting migrations
+2025-03-20 11:13:47,864 - etl.manager - INFO - Starting client migration
+2025-03-20 11:13:47,864 - etl.migrations.client_migration - INFO - Starting client data migration
+2025-03-20 11:13:47,864 - etl.migrations.client_migration - INFO - Fetching town data from facility database
+2025-03-20 11:13:47,880 - core.connection - INFO - Created engine for facility database
+2025-03-20 11:13:47,892 - etl.migrations.client_migration - INFO - Extracting patient data from source database
+2025-03-20 11:13:47,892 - extractors.patient_extractor - INFO - Extracting all patients from tblpatients
+2025-03-20 11:13:47,893 - core.connection - INFO - Created engine for ctc2data database
+2025-03-20 11:13:48,006 - core.connection - INFO - Created engine for client database
+2025-03-20 11:13:48,008 - core.connection - ERROR - Error executing update: Not an executable object: '\n            CREATE TABLE IF NOT EXISTS person_patient_mapping (\n                person_id VARCHAR(36) NOT NULL,\n                original_patient_id VARCHAR(50) NOT NULL,\n                PRIMARY KEY (original_patient_id),\n                KEY (person_id)\n            )\n            '
+2025-03-20 11:13:48,008 - etl.migrations.client_migration - WARNING - Could not load existing mappings: Not an executable object: '\n            CREATE TABLE IF NOT EXISTS person_patient_mapping (\n                person_id VARCHAR(36) NOT NULL,\n                original_patient_id VARCHAR(50) NOT NULL,\n                PRIMARY KEY (original_patient_id),\n                KEY (person_id)\n            )\n            '
+2025-03-20 11:13:48,008 - etl.migrations.client_migration - INFO - Processing batch 1
+2025-03-20 11:13:48,009 - transformers.person_transformer - INFO - Transforming 1000 patient records to person records
+2025-03-20 11:14:04,405 - transformers.person_transformer - INFO - Transformed 1000 person records
+2025-03-20 11:14:04,500 - etl.migrations.client_migration - INFO - Saved 1000 mappings to database
+2025-03-20 11:14:04,500 - loaders.person_loader - INFO - Loading 1000 person records into client database
+2025-03-20 11:14:04,510 - core.connection - INFO - Bulk inserting 1000 rows into person
+2025-03-20 11:14:04,620 - loaders.person_loader - INFO - Successfully loaded 1000 person records
+2025-03-20 11:14:04,620 - transformers.id_transformer - INFO - Transforming 1000 patient records to identification records
+2025-03-20 11:14:04,686 - transformers.id_transformer - INFO - Transformed 875 identification records
+2025-03-20 11:14:04,687 - loaders.id_loader - INFO - Loading 875 identification records into client database
+2025-03-20 11:14:04,687 - core.connection - INFO - Bulk inserting 875 rows into identification
+2025-03-20 11:14:04,728 - loaders.id_loader - INFO - Successfully loaded 875 identification records
+2025-03-20 11:14:04,728 - transformers.phone_transformer - INFO - Transforming 1000 patient records to phone records
+2025-03-20 11:14:04,792 - transformers.phone_transformer - INFO - Transformed 926 phone records
+2025-03-20 11:14:04,793 - loaders.phone_loader - INFO - Loading 926 phone records into client database
+2025-03-20 11:14:04,793 - core.connection - INFO - Bulk inserting 926 rows into phone
+2025-03-20 11:14:04,824 - loaders.phone_loader - INFO - Successfully loaded 926 phone records
+2025-03-20 11:14:04,824 - etl.migrations.client_migration - INFO - Batch 1 complete
+2025-03-20 11:14:04,824 - etl.migrations.client_migration - INFO - Processing batch 2
+2025-03-20 11:14:04,825 - transformers.person_transformer - INFO - Transforming 1000 patient records to person records
+2025-03-20 11:14:18,926 - transformers.person_transformer - INFO - Transformed 1000 person records
+2025-03-20 11:14:19,020 - etl.migrations.client_migration - INFO - Saved 1000 mappings to database
+2025-03-20 11:14:19,021 - loaders.person_loader - INFO - Loading 1000 person records into client database
+2025-03-20 11:14:19,029 - core.connection - INFO - Bulk inserting 1000 rows into person
+2025-03-20 11:14:19,117 - loaders.person_loader - INFO - Successfully loaded 1000 person records
+2025-03-20 11:14:19,118 - transformers.id_transformer - INFO - Transforming 1000 patient records to identification records
+2025-03-20 11:14:19,181 - transformers.id_transformer - INFO - Transformed 815 identification records
+2025-03-20 11:14:19,182 - loaders.id_loader - INFO - Loading 815 identification records into client database
+2025-03-20 11:14:19,182 - core.connection - INFO - Bulk inserting 815 rows into identification
+2025-03-20 11:14:19,217 - loaders.id_loader - INFO - Successfully loaded 815 identification records
+2025-03-20 11:14:19,217 - transformers.phone_transformer - INFO - Transforming 1000 patient records to phone records
+2025-03-20 11:14:19,277 - transformers.phone_transformer - INFO - Transformed 882 phone records
+2025-03-20 11:14:19,277 - loaders.phone_loader - INFO - Loading 882 phone records into client database
+2025-03-20 11:14:19,278 - core.connection - INFO - Bulk inserting 882 rows into phone
+2025-03-20 11:14:19,309 - loaders.phone_loader - INFO - Successfully loaded 882 phone records
+2025-03-20 11:14:19,309 - etl.migrations.client_migration - INFO - Batch 2 complete
+2025-03-20 11:14:19,310 - etl.migrations.client_migration - INFO - Processing batch 3
+2025-03-20 11:14:19,310 - transformers.person_transformer - INFO - Transforming 355 patient records to person records
+2025-03-20 11:14:24,544 - transformers.person_transformer - INFO - Transformed 355 person records
+2025-03-20 11:14:24,577 - etl.migrations.client_migration - INFO - Saved 355 mappings to database
+2025-03-20 11:14:24,578 - loaders.person_loader - INFO - Loading 355 person records into client database
+2025-03-20 11:14:24,582 - core.connection - INFO - Bulk inserting 355 rows into person
+2025-03-20 11:14:24,611 - loaders.person_loader - INFO - Successfully loaded 355 person records
+2025-03-20 11:14:24,611 - transformers.id_transformer - INFO - Transforming 355 patient records to identification records
+2025-03-20 11:14:24,634 - transformers.id_transformer - INFO - Transformed 288 identification records
+2025-03-20 11:14:24,634 - loaders.id_loader - INFO - Loading 288 identification records into client database
+2025-03-20 11:14:24,634 - core.connection - INFO - Bulk inserting 288 rows into identification
+2025-03-20 11:14:24,653 - loaders.id_loader - INFO - Successfully loaded 288 identification records
+2025-03-20 11:14:24,653 - transformers.phone_transformer - INFO - Transforming 355 patient records to phone records
+2025-03-20 11:14:24,676 - transformers.phone_transformer - INFO - Transformed 308 phone records
+2025-03-20 11:14:24,677 - loaders.phone_loader - INFO - Loading 308 phone records into client database
+2025-03-20 11:14:24,677 - core.connection - INFO - Bulk inserting 308 rows into phone
+2025-03-20 11:14:24,712 - loaders.phone_loader - INFO - Successfully loaded 308 phone records
+2025-03-20 11:14:24,712 - etl.migrations.client_migration - INFO - Batch 3 complete
+2025-03-20 11:14:24,712 - etl.migrations.client_migration - INFO - Client data migration complete
+2025-03-20 11:14:24,713 - etl.manager - INFO - Client migration completed
+2025-03-20 11:14:24,713 - etl.manager - INFO - Starting consultation migration
+2025-03-20 11:14:24,713 - etl.migrations.consultation_migration - INFO - Starting consultation data migration
+2025-03-20 11:14:24,713 - etl.migrations.consultation_migration - INFO - Fetching site ID from MRS database
+2025-03-20 11:14:24,714 - core.connection - INFO - Created engine for mrs database
+2025-03-20 11:14:26,822 - etl.migrations.consultation_migration - INFO - Site ID: ZW020343
+2025-03-20 11:14:26,822 - etl.migrations.consultation_migration - INFO - Extracting patient data from source database
+2025-03-20 11:14:26,823 - extractors.patient_extractor - INFO - Extracting all patients from tblpatients
+2025-03-20 11:14:26,920 - etl.migrations.consultation_migration - INFO - Creating person reference data from mapping
+2025-03-20 11:14:26,922 - etl.migrations.consultation_migration - INFO - Processing batch 1
+2025-03-20 11:14:26,923 - transformers.art_transformer - INFO - Transforming 1000 patient records to art records
+2025-03-20 11:14:27,032 - transformers.art_transformer - INFO - Transformed 1000 art records
+2025-03-20 11:14:27,033 - loaders.art_loader - INFO - Loading 1000 art records into consultation database
+2025-03-20 11:14:27,034 - core.connection - INFO - Created engine for consultation database
+2025-03-20 11:14:27,035 - core.connection - INFO - Bulk inserting 1000 rows into art
+2025-03-20 11:14:27,110 - loaders.art_loader - INFO - Successfully loaded 1000 art records
+2025-03-20 11:14:27,110 - etl.migrations.consultation_migration - INFO - Batch 1 complete
+2025-03-20 11:14:27,111 - etl.migrations.consultation_migration - INFO - Processing batch 2
+2025-03-20 11:14:27,112 - transformers.art_transformer - INFO - Transforming 1000 patient records to art records
+2025-03-20 11:14:27,218 - transformers.art_transformer - INFO - Transformed 1000 art records
+2025-03-20 11:14:27,219 - loaders.art_loader - INFO - Loading 1000 art records into consultation database
+2025-03-20 11:14:27,219 - core.connection - INFO - Bulk inserting 1000 rows into art
+2025-03-20 11:14:27,279 - loaders.art_loader - INFO - Successfully loaded 1000 art records
+2025-03-20 11:14:27,279 - etl.migrations.consultation_migration - INFO - Batch 2 complete
+2025-03-20 11:14:27,280 - etl.migrations.consultation_migration - INFO - Processing batch 3
+2025-03-20 11:14:27,281 - transformers.art_transformer - INFO - Transforming 355 patient records to art records
+2025-03-20 11:14:27,321 - transformers.art_transformer - INFO - Transformed 355 art records
+2025-03-20 11:14:27,321 - loaders.art_loader - INFO - Loading 355 art records into consultation database
+2025-03-20 11:14:27,322 - core.connection - INFO - Bulk inserting 355 rows into art
+2025-03-20 11:14:27,350 - loaders.art_loader - INFO - Successfully loaded 355 art records
+2025-03-20 11:14:27,351 - etl.migrations.consultation_migration - INFO - Batch 3 complete
+2025-03-20 11:14:27,351 - etl.migrations.consultation_migration - INFO - Consultation data migration complete
+2025-03-20 11:14:27,353 - etl.manager - INFO - Consultation migration completed
+2025-03-20 11:14:27,353 - etl.manager - INFO - Starting report migration
+2025-03-20 11:14:27,353 - etl.migrations.report_migration - INFO - Starting report data migration
+2025-03-20 11:14:27,353 - etl.migrations.report_migration - INFO - Report migration not fully implemented yet
+2025-03-20 11:14:27,353 - etl.migrations.report_migration - INFO - Report data migration complete
+2025-03-20 11:14:27,353 - etl.manager - INFO - Report migration completed
+2025-03-20 11:14:27,353 - etl.manager - INFO - All migrations completed
+2025-03-20 11:14:27,353 - root - INFO - ETL application completed in 39.49 seconds
+2025-03-20 11:14:27,353 - root - INFO - Migration statistics: {'client': {'person_extracted': 2355, 'person_loaded': 2355, 'identification_loaded': 1978, 'phone_loaded': 2116}, 'consultation': {'patient_extracted': 2355, 'art_loaded': 2355}, 'report': {'tables_processed': 0, 'records_migrated': 0}}
