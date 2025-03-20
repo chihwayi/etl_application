@@ -1,0 +1,100 @@
+2025-03-20 09:41:28,286 - root - INFO - Logging initialized at 2025-03-20 09:41:28.286387 with level INFO
+2025-03-20 09:41:28,286 - root - INFO - Starting ETL application at 2025-03-20 09:41:28
+2025-03-20 09:41:28,286 - root - INFO - Setting up database connections
+2025-03-20 09:41:28,286 - __main__ - INFO - Starting client data migration
+2025-03-20 09:41:28,286 - __main__ - INFO - Fetching town data from facility database
+2025-03-20 09:41:28,298 - core.connection - INFO - Created engine for facility database
+2025-03-20 09:41:28,305 - __main__ - INFO - Extracting patient data from source database
+2025-03-20 09:41:28,305 - extractors.patient_extractor - INFO - Extracting all patients from tblpatients
+2025-03-20 09:41:28,305 - core.connection - INFO - Created engine for ctc2data database
+2025-03-20 09:41:28,413 - __main__ - INFO - Checking for existing person records and mappings
+2025-03-20 09:41:28,414 - core.connection - INFO - Created engine for client database
+2025-03-20 09:41:28,415 - core.connection - ERROR - Error executing update: Not an executable object: '\n            CREATE TABLE IF NOT EXISTS person_patient_mapping (\n                person_id VARCHAR(36) NOT NULL,\n                original_patient_id VARCHAR(50) NOT NULL,\n                PRIMARY KEY (original_patient_id),\n                KEY (person_id)\n            )\n            '
+2025-03-20 09:41:28,416 - __main__ - WARNING - Could not load existing mappings: Not an executable object: '\n            CREATE TABLE IF NOT EXISTS person_patient_mapping (\n                person_id VARCHAR(36) NOT NULL,\n                original_patient_id VARCHAR(50) NOT NULL,\n                PRIMARY KEY (original_patient_id),\n                KEY (person_id)\n            )\n            '
+2025-03-20 09:41:28,416 - __main__ - INFO - Processing batch 1
+2025-03-20 09:41:28,416 - transformers.person_transformer - INFO - Transforming 1000 patient records to person records
+2025-03-20 09:41:44,676 - transformers.person_transformer - INFO - Transformed 1000 person records
+2025-03-20 09:41:44,771 - __main__ - INFO - Saved 1000 mappings to database
+2025-03-20 09:41:44,771 - loaders.person_loader - INFO - Loading 1000 person records into client database
+2025-03-20 09:41:44,779 - core.connection - INFO - Bulk inserting 1000 rows into person
+2025-03-20 09:41:44,875 - loaders.person_loader - INFO - Successfully loaded 1000 person records
+2025-03-20 09:41:44,876 - transformers.id_transformer - INFO - Transforming 1000 patient records to identification records
+2025-03-20 09:41:44,942 - transformers.id_transformer - INFO - Transformed 875 identification records
+2025-03-20 09:41:44,943 - loaders.id_loader - INFO - Loading 875 identification records into client database
+2025-03-20 09:41:44,943 - core.connection - INFO - Bulk inserting 875 rows into identification
+2025-03-20 09:41:44,980 - loaders.id_loader - INFO - Successfully loaded 875 identification records
+2025-03-20 09:41:44,980 - transformers.phone_transformer - INFO - Transforming 1000 patient records to phone records
+2025-03-20 09:41:45,045 - transformers.phone_transformer - INFO - Transformed 926 phone records
+2025-03-20 09:41:45,046 - loaders.phone_loader - INFO - Loading 926 phone records into client database
+2025-03-20 09:41:45,046 - core.connection - INFO - Bulk inserting 926 rows into phone
+2025-03-20 09:41:45,078 - loaders.phone_loader - INFO - Successfully loaded 926 phone records
+2025-03-20 09:41:45,078 - __main__ - INFO - Batch 1 complete
+2025-03-20 09:41:45,079 - __main__ - INFO - Processing batch 2
+2025-03-20 09:41:45,079 - transformers.person_transformer - INFO - Transforming 1000 patient records to person records
+2025-03-20 09:41:59,991 - transformers.person_transformer - INFO - Transformed 1000 person records
+2025-03-20 09:42:00,090 - __main__ - INFO - Saved 1000 mappings to database
+2025-03-20 09:42:00,090 - loaders.person_loader - INFO - Loading 1000 person records into client database
+2025-03-20 09:42:00,098 - core.connection - INFO - Bulk inserting 1000 rows into person
+2025-03-20 09:42:00,188 - loaders.person_loader - INFO - Successfully loaded 1000 person records
+2025-03-20 09:42:00,188 - transformers.id_transformer - INFO - Transforming 1000 patient records to identification records
+2025-03-20 09:42:00,254 - transformers.id_transformer - INFO - Transformed 815 identification records
+2025-03-20 09:42:00,254 - loaders.id_loader - INFO - Loading 815 identification records into client database
+2025-03-20 09:42:00,254 - core.connection - INFO - Bulk inserting 815 rows into identification
+2025-03-20 09:42:00,309 - loaders.id_loader - INFO - Successfully loaded 815 identification records
+2025-03-20 09:42:00,309 - transformers.phone_transformer - INFO - Transforming 1000 patient records to phone records
+2025-03-20 09:42:00,372 - transformers.phone_transformer - INFO - Transformed 882 phone records
+2025-03-20 09:42:00,373 - loaders.phone_loader - INFO - Loading 882 phone records into client database
+2025-03-20 09:42:00,373 - core.connection - INFO - Bulk inserting 882 rows into phone
+2025-03-20 09:42:00,403 - loaders.phone_loader - INFO - Successfully loaded 882 phone records
+2025-03-20 09:42:00,404 - __main__ - INFO - Batch 2 complete
+2025-03-20 09:42:00,404 - __main__ - INFO - Processing batch 3
+2025-03-20 09:42:00,404 - transformers.person_transformer - INFO - Transforming 355 patient records to person records
+2025-03-20 09:42:05,690 - transformers.person_transformer - INFO - Transformed 355 person records
+2025-03-20 09:42:05,729 - __main__ - INFO - Saved 355 mappings to database
+2025-03-20 09:42:05,729 - loaders.person_loader - INFO - Loading 355 person records into client database
+2025-03-20 09:42:05,733 - core.connection - INFO - Bulk inserting 355 rows into person
+2025-03-20 09:42:05,764 - loaders.person_loader - INFO - Successfully loaded 355 person records
+2025-03-20 09:42:05,765 - transformers.id_transformer - INFO - Transforming 355 patient records to identification records
+2025-03-20 09:42:05,792 - transformers.id_transformer - INFO - Transformed 288 identification records
+2025-03-20 09:42:05,792 - loaders.id_loader - INFO - Loading 288 identification records into client database
+2025-03-20 09:42:05,792 - core.connection - INFO - Bulk inserting 288 rows into identification
+2025-03-20 09:42:05,807 - loaders.id_loader - INFO - Successfully loaded 288 identification records
+2025-03-20 09:42:05,807 - transformers.phone_transformer - INFO - Transforming 355 patient records to phone records
+2025-03-20 09:42:05,836 - transformers.phone_transformer - INFO - Transformed 308 phone records
+2025-03-20 09:42:05,837 - loaders.phone_loader - INFO - Loading 308 phone records into client database
+2025-03-20 09:42:05,837 - core.connection - INFO - Bulk inserting 308 rows into phone
+2025-03-20 09:42:05,846 - loaders.phone_loader - INFO - Successfully loaded 308 phone records
+2025-03-20 09:42:05,846 - __main__ - INFO - Batch 3 complete
+2025-03-20 09:42:05,846 - __main__ - INFO - Client data migration complete
+2025-03-20 09:42:05,848 - __main__ - INFO - Starting consultation data migration
+2025-03-20 09:42:05,848 - __main__ - INFO - Fetching site ID from MRS database
+2025-03-20 09:42:05,848 - core.connection - INFO - Created engine for mrs database
+2025-03-20 09:42:07,838 - __main__ - INFO - Site ID: ZW020343
+2025-03-20 09:42:07,838 - __main__ - INFO - Extracting patient data from source database
+2025-03-20 09:42:07,838 - extractors.patient_extractor - INFO - Extracting all patients from tblpatients
+2025-03-20 09:42:07,978 - __main__ - INFO - Creating person reference data from mapping
+2025-03-20 09:42:07,982 - __main__ - INFO - Processing batch 1
+2025-03-20 09:42:07,984 - transformers.art_transformer - INFO - Transforming 1000 patient records to art records
+2025-03-20 09:42:08,128 - transformers.art_transformer - INFO - Transformed 1000 art records
+2025-03-20 09:42:08,128 - loaders.art_loader - INFO - Loading 1000 art records into consultation database
+2025-03-20 09:42:08,129 - core.connection - INFO - Created engine for consultation database
+2025-03-20 09:42:08,131 - core.connection - INFO - Bulk inserting 1000 rows into art
+2025-03-20 09:42:08,227 - loaders.art_loader - INFO - Successfully loaded 1000 art records
+2025-03-20 09:42:08,227 - __main__ - INFO - Batch 1 complete
+2025-03-20 09:42:08,227 - __main__ - INFO - Processing batch 2
+2025-03-20 09:42:08,230 - transformers.art_transformer - INFO - Transforming 1000 patient records to art records
+2025-03-20 09:42:08,349 - transformers.art_transformer - INFO - Transformed 1000 art records
+2025-03-20 09:42:08,350 - loaders.art_loader - INFO - Loading 1000 art records into consultation database
+2025-03-20 09:42:08,350 - core.connection - INFO - Bulk inserting 1000 rows into art
+2025-03-20 09:42:08,428 - loaders.art_loader - INFO - Successfully loaded 1000 art records
+2025-03-20 09:42:08,428 - __main__ - INFO - Batch 2 complete
+2025-03-20 09:42:08,428 - __main__ - INFO - Processing batch 3
+2025-03-20 09:42:08,429 - transformers.art_transformer - INFO - Transforming 355 patient records to art records
+2025-03-20 09:42:08,469 - transformers.art_transformer - INFO - Transformed 355 art records
+2025-03-20 09:42:08,470 - loaders.art_loader - INFO - Loading 355 art records into consultation database
+2025-03-20 09:42:08,470 - core.connection - INFO - Bulk inserting 355 rows into art
+2025-03-20 09:42:08,496 - loaders.art_loader - INFO - Successfully loaded 355 art records
+2025-03-20 09:42:08,497 - __main__ - INFO - Batch 3 complete
+2025-03-20 09:42:08,497 - __main__ - INFO - Consultation data migration complete
+2025-03-20 09:42:08,499 - root - INFO - ETL application completed in 40.21 seconds
+2025-03-20 09:42:08,499 - root - INFO - Migration statistics: {'client': {'person_extracted': 2355, 'person_loaded': 2355, 'identification_loaded': 1978, 'phone_loaded': 2116}, 'consultation': {'patient_extracted': 2355, 'art_loaded': 2355}}
