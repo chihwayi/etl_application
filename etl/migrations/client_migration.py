@@ -8,10 +8,11 @@ from transformers.phone_transformer import PhoneTransformer
 from loaders.person_loader import PersonLoader
 from loaders.id_loader import IdentificationLoader
 from loaders.phone_loader import PhoneLoader
+from etl.migrations.client_relationship_migration import RelationshipMigration
 
 
 class ClientMigration:
-    """Handles migration of data to the client database (person, identification, phone)"""
+    """Handles migration of data to the client database (person, identification, phone, relationship)"""
     
     def __init__(self, connections, batch_size):
         """Initialize client migration
@@ -36,7 +37,8 @@ class ClientMigration:
             'person_extracted': 0,
             'person_loaded': 0,
             'identification_loaded': 0,
-            'phone_loaded': 0
+            'phone_loaded': 0,
+            'relationship_loaded': 0
         }
         
         # Create a dictionary to store the mapping between original patient ID and person ID
@@ -72,6 +74,15 @@ class ClientMigration:
                 
                 # Update mapping with new mappings
                 patient_person_mapping.update(batch_results['new_mappings'])
+            
+            # After all person records are processed, handle relationships
+            self.logger.info("Starting relationship migration")
+            relationship_migration = RelationshipMigration(
+                connections=self.connections,
+                batch_size=self.batch_size,
+                patient_person_mapping=patient_person_mapping
+            )
+            stats['relationship_loaded'] = relationship_migration.run()
                 
             self.logger.info("Client data migration complete")
             return stats, patient_person_mapping

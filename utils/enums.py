@@ -174,3 +174,38 @@ class Occupation(Enum):
             str: Occupation description
         """
         return cls.categorize(occupation_text).description
+    
+class RelationshipType(Enum):
+    """Mapping of relationship types from source to target"""
+    
+    PARENT = "PARENT"
+    CHILD = "CHILD"
+    SPOUSE = "SPOUSE"
+    SIBLING = "SIBLING"
+    OTHER = "OTHER"
+    
+    @classmethod
+    def map_from_source(cls, source_value):
+        """Map a source relationship type to target type
+        
+        Args:
+            source_value (str): Source relationship type
+            
+        Returns:
+            str: Target relationship type
+        """
+        if not source_value:
+            return cls.OTHER.value
+            
+        source_value = source_value.lower()
+        
+        if "son" in source_value or "daughter" in source_value:
+            return cls.CHILD.value
+        elif "wife" in source_value or "husband" in source_value or "spouse" in source_value:
+            return cls.SPOUSE.value
+        elif "brother" in source_value or "sister" in source_value or "sibling" in source_value:
+            return cls.SIBLING.value
+        elif "parent" in source_value or "mother" in source_value or "father" in source_value:
+            return cls.PARENT.value
+        else:
+            return cls.OTHER.value
