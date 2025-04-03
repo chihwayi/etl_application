@@ -92,53 +92,6 @@ class DataValidatorGUI:
             self.sex_entry.delete(0, tk.END)
             self.sex_entry.insert(0, values[4])
             self.selected_patient_id = values[0]
-    """
-    def save_updates(self):
-        Save the updated data to the database and transition if all records are updated
-        if not hasattr(self, "selected_patient_id"):
-            messagebox.showwarning("Warning", "No patient selected")
-            return
-
-        first_name = self.first_name_entry.get().strip()
-        surname = self.surname_entry.get().strip()
-        sex = self.sex_entry.get().strip()
-
-        if not all([first_name, surname, sex]):
-            messagebox.showwarning("Warning", "All fields must be filled")
-            return
-
-        update_query = 
-        UPDATE tblpatients
-        SET FirstName = %s, SurName = %s, Sex = %s
-        WHERE PatientID = %s
-        try:
-            self.source_conn.execute_update(update_query, (first_name, surname, sex, self.selected_patient_id))
-            logger.info(f"Updated patient {self.selected_patient_id}")
-            # Update treeview
-            selected = self.tree.selection()[0]
-            self.tree.item(selected, values=(self.selected_patient_id, self.tree.item(selected)["values"][1], first_name, surname, sex))
-            messagebox.showinfo("Success", "Data updated successfully")
-            
-            # Remove the updated item from the treeview
-            self.tree.delete(selected)
-            
-            # Check if there are any remaining items
-            if not self.tree.get_children():
-                logger.info("All patient records updated, transitioning to MDE upload")
-                self.window.destroy()  # Close the validator GUI
-                # Launch MDE uploader directly
-                reference_manager = [None]
-                def set_reference_manager(ref_mgr):
-                    reference_manager[0] = ref_mgr
-                mde_uploader = MDEUploaderGUI(set_reference_manager)
-                mde_uploader.run()
-                # Store the reference manager in the instance for main.py to access
-                self.reference_manager = reference_manager[0]
-
-        except Exception as e:
-            logger.error(f"Error updating data: {str(e)}")
-            messagebox.showerror("Error", f"Failed to update data: {str(e)}")
-        """
     
     def save_updates(self):
         """Save the updated data to the database and transition if all records are updated"""
