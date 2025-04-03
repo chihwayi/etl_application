@@ -1,0 +1,316 @@
+2025-04-03 22:15:05,851 - root - INFO - Logging initialized at 2025-04-03 22:15:05.851213 with level INFO
+2025-04-03 22:15:05,851 - root - INFO - Starting ETL application at 2025-04-03 22:15:05
+2025-04-03 22:15:05,863 - core.connection - INFO - Created engine for ctc2data database
+2025-04-03 22:15:05,876 - root - INFO - Patients with missing data found, launching validator GUI
+2025-04-03 22:15:06,105 - gui.data_validator - INFO - Loaded 3 records with missing data
+2025-04-03 22:15:18,724 - gui.data_validator - INFO - Updated patient 04-01-0A-2007-A-02173
+2025-04-03 22:15:33,601 - gui.data_validator - INFO - Updated patient 04-01-0A-2012-A-01955
+2025-04-03 22:15:45,555 - gui.data_validator - INFO - Updated patient 04-01-0A-2015-A-99957
+2025-04-03 22:15:46,854 - gui.data_validator - INFO - All patient records updated, transitioning to MDE upload
+2025-04-03 22:16:21,955 - mde_processor.mde_reader - INFO - Initialized MDEReader with file: /home/devoop/Downloads/ePMS-v 2.1.2.mde
+2025-04-03 22:16:21,979 - mde_processor.mde_reader - INFO - Read 58 rows from tblSetupARVFixedDoseCombinations
+2025-04-03 22:16:21,986 - mde_processor.mde_reader - INFO - Read 44 rows from tblSetupARVReasonCodes
+2025-04-03 22:16:21,993 - mde_processor.mde_reader - INFO - Read 8 rows from tblSetupARVStatusCodes
+2025-04-03 22:16:22,000 - mde_processor.mde_reader - INFO - Read 8 rows from tblSetupDeliveryModes
+2025-04-03 22:16:22,007 - mde_processor.mde_reader - INFO - Read 10 rows from tblSetupDrugTypes
+2025-04-03 22:16:22,015 - mde_processor.mde_reader - INFO - Read 8 rows from tblSetupFamilyPlanning
+2025-04-03 22:16:22,021 - mde_processor.mde_reader - INFO - Read 3 rows from tblSetupFunctionalStatus
+2025-04-03 22:16:22,028 - mde_processor.mde_reader - INFO - Read 8 rows from tblSetupHIVTestReasons
+2025-04-03 22:16:22,036 - mde_processor.mde_reader - INFO - Read 2 rows from tblSetupHIVTestTypes
+2025-04-03 22:16:22,043 - mde_processor.mde_reader - INFO - Read 6 rows from tblSetupInfantFeedingPractices
+2025-04-03 22:16:22,050 - mde_processor.mde_reader - INFO - Read 7 rows from tblSetupIPTReasonCodes
+2025-04-03 22:16:22,057 - mde_processor.mde_reader - INFO - Read 4 rows from tblSetupMaritalStatus
+2025-04-03 22:16:22,064 - mde_processor.mde_reader - INFO - Read 3 rows from tblSetupOrphanStatus
+2025-04-03 22:16:22,070 - mde_processor.mde_reader - INFO - Read 3 rows from tblSetupPregnancyOutcomes
+2025-04-03 22:16:22,078 - mde_processor.mde_reader - INFO - Read 76 rows from tblSetupProblems
+2025-04-03 22:16:22,085 - mde_processor.mde_reader - INFO - Read 6 rows from tblSetupReferrals
+2025-04-03 22:16:22,092 - mde_processor.mde_reader - INFO - Read 4 rows from tblSetupReferralsTo
+2025-04-03 22:16:22,099 - mde_processor.mde_reader - INFO - Read 8 rows from tblSetupStatus
+2025-04-03 22:16:22,106 - mde_processor.mde_reader - INFO - Read 3 rows from tblSetupTestResults
+2025-04-03 22:16:22,113 - mde_processor.mde_reader - INFO - Read 4 rows from tblSetupTBStatus
+2025-04-03 22:16:22,120 - mde_processor.mde_reader - INFO - Read 15 rows from tblSetupTestTypes
+2025-04-03 22:16:22,128 - mde_processor.mde_reader - INFO - Read 2 rows from tblSetupTransferIn
+2025-04-03 22:16:22,135 - mde_processor.mde_reader - INFO - Read 13 rows from tblSetupVisitTypes
+2025-04-03 22:16:23,746 - etl.manager - INFO - Setting up database connections
+2025-04-03 22:16:23,746 - etl.manager - INFO - Starting migrations
+2025-04-03 22:16:23,746 - etl.manager - INFO - Starting client migration
+2025-04-03 22:16:23,746 - etl.migrations.client_migration - INFO - Starting client data migration
+2025-04-03 22:16:23,746 - etl.migrations.client_migration - INFO - Fetching town data from facility database
+2025-04-03 22:16:23,747 - core.connection - INFO - Created engine for facility database
+2025-04-03 22:16:23,759 - etl.migrations.client_migration - INFO - Extracting patient data from source database
+2025-04-03 22:16:23,759 - extractors.patient_extractor - INFO - Extracting all patients from tblpatients
+2025-04-03 22:16:23,760 - core.connection - INFO - Created engine for ctc2data database
+2025-04-03 22:16:24,135 - core.connection - INFO - Created engine for client database
+2025-04-03 22:16:24,146 - etl.migrations.client_migration - INFO - Processing batch 1
+2025-04-03 22:16:24,147 - transformers.person_transformer - INFO - Transforming 1000 patient records to person records
+2025-04-03 22:16:38,016 - transformers.person_transformer - INFO - Transformed 1000 person records
+2025-04-03 22:16:38,116 - etl.migrations.client_migration - INFO - Saved 1000 mappings to database
+2025-04-03 22:16:38,116 - loaders.person_loader - INFO - Loading 1000 person records into client database
+2025-04-03 22:16:38,117 - core.connection - ERROR - Error executing query: List argument must consist only of tuples or dictionaries
+2025-04-03 22:16:38,117 - loaders.person_loader - WARNING - Could not check for existing records: List argument must consist only of tuples or dictionaries
+2025-04-03 22:16:38,120 - core.connection - INFO - Bulk inserting 1000 rows into person
+2025-04-03 22:16:38,231 - loaders.person_loader - INFO - Successfully loaded 1000 person records
+2025-04-03 22:16:38,231 - transformers.id_transformer - INFO - Transforming 1000 patient records to identification records
+2025-04-03 22:16:38,313 - transformers.id_transformer - INFO - Transformed 695 identification records
+2025-04-03 22:16:38,313 - loaders.id_loader - INFO - Loading 695 identification records into client database
+2025-04-03 22:16:38,313 - core.connection - INFO - Bulk inserting 695 rows into identification
+2025-04-03 22:16:38,345 - loaders.id_loader - INFO - Successfully loaded 695 identification records
+2025-04-03 22:16:38,345 - transformers.phone_transformer - INFO - Transforming 1000 patient records to phone records
+2025-04-03 22:16:38,405 - transformers.phone_transformer - INFO - Transformed 674 phone records
+2025-04-03 22:16:38,405 - loaders.phone_loader - INFO - Loading 674 phone records into client database
+2025-04-03 22:16:38,405 - core.connection - INFO - Bulk inserting 674 rows into phone
+2025-04-03 22:16:38,431 - loaders.phone_loader - INFO - Successfully loaded 674 phone records
+2025-04-03 22:16:38,431 - etl.migrations.client_migration - INFO - Batch 1 complete
+2025-04-03 22:16:38,432 - etl.migrations.client_migration - INFO - Processing batch 2
+2025-04-03 22:16:38,432 - transformers.person_transformer - INFO - Transforming 1000 patient records to person records
+2025-04-03 22:16:52,241 - transformers.person_transformer - INFO - Transformed 1000 person records
+2025-04-03 22:16:52,329 - etl.migrations.client_migration - INFO - Saved 1000 mappings to database
+2025-04-03 22:16:52,329 - loaders.person_loader - INFO - Loading 1000 person records into client database
+2025-04-03 22:16:52,330 - core.connection - ERROR - Error executing query: List argument must consist only of tuples or dictionaries
+2025-04-03 22:16:52,330 - loaders.person_loader - WARNING - Could not check for existing records: List argument must consist only of tuples or dictionaries
+2025-04-03 22:16:52,331 - core.connection - INFO - Bulk inserting 1000 rows into person
+2025-04-03 22:16:52,418 - loaders.person_loader - INFO - Successfully loaded 1000 person records
+2025-04-03 22:16:52,418 - transformers.id_transformer - INFO - Transforming 1000 patient records to identification records
+2025-04-03 22:16:52,479 - transformers.id_transformer - INFO - Transformed 685 identification records
+2025-04-03 22:16:52,480 - loaders.id_loader - INFO - Loading 685 identification records into client database
+2025-04-03 22:16:52,480 - core.connection - INFO - Bulk inserting 685 rows into identification
+2025-04-03 22:16:52,535 - loaders.id_loader - INFO - Successfully loaded 685 identification records
+2025-04-03 22:16:52,535 - transformers.phone_transformer - INFO - Transforming 1000 patient records to phone records
+2025-04-03 22:16:52,596 - transformers.phone_transformer - INFO - Transformed 660 phone records
+2025-04-03 22:16:52,597 - loaders.phone_loader - INFO - Loading 660 phone records into client database
+2025-04-03 22:16:52,597 - core.connection - INFO - Bulk inserting 660 rows into phone
+2025-04-03 22:16:52,622 - loaders.phone_loader - INFO - Successfully loaded 660 phone records
+2025-04-03 22:16:52,623 - etl.migrations.client_migration - INFO - Batch 2 complete
+2025-04-03 22:16:52,623 - etl.migrations.client_migration - INFO - Processing batch 3
+2025-04-03 22:16:52,624 - transformers.person_transformer - INFO - Transforming 1000 patient records to person records
+2025-04-03 22:17:06,549 - transformers.person_transformer - INFO - Transformed 1000 person records
+2025-04-03 22:17:06,644 - etl.migrations.client_migration - INFO - Saved 1000 mappings to database
+2025-04-03 22:17:06,644 - loaders.person_loader - INFO - Loading 1000 person records into client database
+2025-04-03 22:17:06,645 - core.connection - ERROR - Error executing query: List argument must consist only of tuples or dictionaries
+2025-04-03 22:17:06,645 - loaders.person_loader - WARNING - Could not check for existing records: List argument must consist only of tuples or dictionaries
+2025-04-03 22:17:06,646 - core.connection - INFO - Bulk inserting 1000 rows into person
+2025-04-03 22:17:06,715 - loaders.person_loader - INFO - Successfully loaded 1000 person records
+2025-04-03 22:17:06,716 - transformers.id_transformer - INFO - Transforming 1000 patient records to identification records
+2025-04-03 22:17:06,774 - transformers.id_transformer - INFO - Transformed 667 identification records
+2025-04-03 22:17:06,775 - loaders.id_loader - INFO - Loading 667 identification records into client database
+2025-04-03 22:17:06,775 - core.connection - INFO - Bulk inserting 667 rows into identification
+2025-04-03 22:17:06,811 - loaders.id_loader - INFO - Successfully loaded 667 identification records
+2025-04-03 22:17:06,811 - transformers.phone_transformer - INFO - Transforming 1000 patient records to phone records
+2025-04-03 22:17:06,870 - transformers.phone_transformer - INFO - Transformed 620 phone records
+2025-04-03 22:17:06,870 - loaders.phone_loader - INFO - Loading 620 phone records into client database
+2025-04-03 22:17:06,870 - core.connection - INFO - Bulk inserting 620 rows into phone
+2025-04-03 22:17:06,892 - loaders.phone_loader - INFO - Successfully loaded 620 phone records
+2025-04-03 22:17:06,892 - etl.migrations.client_migration - INFO - Batch 3 complete
+2025-04-03 22:17:06,893 - etl.migrations.client_migration - INFO - Processing batch 4
+2025-04-03 22:17:06,893 - transformers.person_transformer - INFO - Transforming 1000 patient records to person records
+2025-04-03 22:17:20,952 - transformers.person_transformer - INFO - Transformed 1000 person records
+2025-04-03 22:17:21,043 - etl.migrations.client_migration - INFO - Saved 1000 mappings to database
+2025-04-03 22:17:21,043 - loaders.person_loader - INFO - Loading 1000 person records into client database
+2025-04-03 22:17:21,043 - core.connection - ERROR - Error executing query: List argument must consist only of tuples or dictionaries
+2025-04-03 22:17:21,044 - loaders.person_loader - WARNING - Could not check for existing records: List argument must consist only of tuples or dictionaries
+2025-04-03 22:17:21,044 - core.connection - INFO - Bulk inserting 1000 rows into person
+2025-04-03 22:17:21,114 - loaders.person_loader - INFO - Successfully loaded 1000 person records
+2025-04-03 22:17:21,114 - transformers.id_transformer - INFO - Transforming 1000 patient records to identification records
+2025-04-03 22:17:21,175 - transformers.id_transformer - INFO - Transformed 582 identification records
+2025-04-03 22:17:21,175 - loaders.id_loader - INFO - Loading 582 identification records into client database
+2025-04-03 22:17:21,175 - core.connection - INFO - Bulk inserting 582 rows into identification
+2025-04-03 22:17:21,201 - loaders.id_loader - INFO - Successfully loaded 582 identification records
+2025-04-03 22:17:21,202 - transformers.phone_transformer - INFO - Transforming 1000 patient records to phone records
+2025-04-03 22:17:21,255 - transformers.phone_transformer - INFO - Transformed 359 phone records
+2025-04-03 22:17:21,256 - loaders.phone_loader - INFO - Loading 359 phone records into client database
+2025-04-03 22:17:21,256 - core.connection - INFO - Bulk inserting 359 rows into phone
+2025-04-03 22:17:21,271 - loaders.phone_loader - INFO - Successfully loaded 359 phone records
+2025-04-03 22:17:21,271 - etl.migrations.client_migration - INFO - Batch 4 complete
+2025-04-03 22:17:21,272 - etl.migrations.client_migration - INFO - Processing batch 5
+2025-04-03 22:17:21,272 - transformers.person_transformer - INFO - Transforming 1000 patient records to person records
+2025-04-03 22:17:35,178 - transformers.person_transformer - INFO - Transformed 1000 person records
+2025-04-03 22:17:35,271 - etl.migrations.client_migration - INFO - Saved 1000 mappings to database
+2025-04-03 22:17:35,271 - loaders.person_loader - INFO - Loading 1000 person records into client database
+2025-04-03 22:17:35,272 - core.connection - ERROR - Error executing query: List argument must consist only of tuples or dictionaries
+2025-04-03 22:17:35,272 - loaders.person_loader - WARNING - Could not check for existing records: List argument must consist only of tuples or dictionaries
+2025-04-03 22:17:35,273 - core.connection - INFO - Bulk inserting 1000 rows into person
+2025-04-03 22:17:35,343 - loaders.person_loader - INFO - Successfully loaded 1000 person records
+2025-04-03 22:17:35,343 - transformers.id_transformer - INFO - Transforming 1000 patient records to identification records
+2025-04-03 22:17:35,403 - transformers.id_transformer - INFO - Transformed 628 identification records
+2025-04-03 22:17:35,404 - loaders.id_loader - INFO - Loading 628 identification records into client database
+2025-04-03 22:17:35,404 - core.connection - INFO - Bulk inserting 628 rows into identification
+2025-04-03 22:17:35,432 - loaders.id_loader - INFO - Successfully loaded 628 identification records
+2025-04-03 22:17:35,432 - transformers.phone_transformer - INFO - Transforming 1000 patient records to phone records
+2025-04-03 22:17:35,498 - transformers.phone_transformer - INFO - Transformed 648 phone records
+2025-04-03 22:17:35,499 - loaders.phone_loader - INFO - Loading 648 phone records into client database
+2025-04-03 22:17:35,499 - core.connection - INFO - Bulk inserting 648 rows into phone
+2025-04-03 22:17:35,529 - loaders.phone_loader - INFO - Successfully loaded 648 phone records
+2025-04-03 22:17:35,529 - etl.migrations.client_migration - INFO - Batch 5 complete
+2025-04-03 22:17:35,530 - etl.migrations.client_migration - INFO - Processing batch 6
+2025-04-03 22:17:35,531 - transformers.person_transformer - INFO - Transforming 1000 patient records to person records
+2025-04-03 22:17:50,143 - transformers.person_transformer - INFO - Transformed 1000 person records
+2025-04-03 22:17:50,236 - etl.migrations.client_migration - INFO - Saved 1000 mappings to database
+2025-04-03 22:17:50,237 - loaders.person_loader - INFO - Loading 1000 person records into client database
+2025-04-03 22:17:50,237 - core.connection - ERROR - Error executing query: List argument must consist only of tuples or dictionaries
+2025-04-03 22:17:50,238 - loaders.person_loader - WARNING - Could not check for existing records: List argument must consist only of tuples or dictionaries
+2025-04-03 22:17:50,238 - core.connection - INFO - Bulk inserting 1000 rows into person
+2025-04-03 22:17:50,307 - loaders.person_loader - INFO - Successfully loaded 1000 person records
+2025-04-03 22:17:50,307 - transformers.id_transformer - INFO - Transforming 1000 patient records to identification records
+2025-04-03 22:17:50,366 - transformers.id_transformer - INFO - Transformed 623 identification records
+2025-04-03 22:17:50,366 - loaders.id_loader - INFO - Loading 623 identification records into client database
+2025-04-03 22:17:50,367 - core.connection - INFO - Bulk inserting 623 rows into identification
+2025-04-03 22:17:50,385 - loaders.id_loader - INFO - Successfully loaded 623 identification records
+2025-04-03 22:17:50,385 - transformers.phone_transformer - INFO - Transforming 1000 patient records to phone records
+2025-04-03 22:17:50,444 - transformers.phone_transformer - INFO - Transformed 684 phone records
+2025-04-03 22:17:50,445 - loaders.phone_loader - INFO - Loading 684 phone records into client database
+2025-04-03 22:17:50,445 - core.connection - INFO - Bulk inserting 684 rows into phone
+2025-04-03 22:17:50,461 - loaders.phone_loader - INFO - Successfully loaded 684 phone records
+2025-04-03 22:17:50,461 - etl.migrations.client_migration - INFO - Batch 6 complete
+2025-04-03 22:17:50,462 - etl.migrations.client_migration - INFO - Processing batch 7
+2025-04-03 22:17:50,462 - transformers.person_transformer - INFO - Transforming 1000 patient records to person records
+2025-04-03 22:18:04,829 - transformers.person_transformer - INFO - Transformed 1000 person records
+2025-04-03 22:18:04,912 - etl.migrations.client_migration - INFO - Saved 1000 mappings to database
+2025-04-03 22:18:04,912 - loaders.person_loader - INFO - Loading 1000 person records into client database
+2025-04-03 22:18:04,913 - core.connection - ERROR - Error executing query: List argument must consist only of tuples or dictionaries
+2025-04-03 22:18:04,913 - loaders.person_loader - WARNING - Could not check for existing records: List argument must consist only of tuples or dictionaries
+2025-04-03 22:18:04,913 - core.connection - INFO - Bulk inserting 1000 rows into person
+2025-04-03 22:18:04,983 - loaders.person_loader - INFO - Successfully loaded 1000 person records
+2025-04-03 22:18:04,983 - transformers.id_transformer - INFO - Transforming 1000 patient records to identification records
+2025-04-03 22:18:05,040 - transformers.id_transformer - INFO - Transformed 641 identification records
+2025-04-03 22:18:05,040 - loaders.id_loader - INFO - Loading 641 identification records into client database
+2025-04-03 22:18:05,040 - core.connection - INFO - Bulk inserting 641 rows into identification
+2025-04-03 22:18:05,058 - loaders.id_loader - INFO - Successfully loaded 641 identification records
+2025-04-03 22:18:05,058 - transformers.phone_transformer - INFO - Transforming 1000 patient records to phone records
+2025-04-03 22:18:05,118 - transformers.phone_transformer - INFO - Transformed 747 phone records
+2025-04-03 22:18:05,119 - loaders.phone_loader - INFO - Loading 747 phone records into client database
+2025-04-03 22:18:05,119 - core.connection - INFO - Bulk inserting 747 rows into phone
+2025-04-03 22:18:05,135 - loaders.phone_loader - INFO - Successfully loaded 747 phone records
+2025-04-03 22:18:05,135 - etl.migrations.client_migration - INFO - Batch 7 complete
+2025-04-03 22:18:05,136 - etl.migrations.client_migration - INFO - Processing batch 8
+2025-04-03 22:18:05,136 - transformers.person_transformer - INFO - Transforming 1000 patient records to person records
+2025-04-03 22:18:19,065 - transformers.person_transformer - INFO - Transformed 1000 person records
+2025-04-03 22:18:19,152 - etl.migrations.client_migration - INFO - Saved 1000 mappings to database
+2025-04-03 22:18:19,152 - loaders.person_loader - INFO - Loading 1000 person records into client database
+2025-04-03 22:18:19,153 - core.connection - ERROR - Error executing query: List argument must consist only of tuples or dictionaries
+2025-04-03 22:18:19,153 - loaders.person_loader - WARNING - Could not check for existing records: List argument must consist only of tuples or dictionaries
+2025-04-03 22:18:19,154 - core.connection - INFO - Bulk inserting 1000 rows into person
+2025-04-03 22:18:19,233 - loaders.person_loader - INFO - Successfully loaded 1000 person records
+2025-04-03 22:18:19,234 - transformers.id_transformer - INFO - Transforming 1000 patient records to identification records
+2025-04-03 22:18:19,319 - transformers.id_transformer - INFO - Transformed 589 identification records
+2025-04-03 22:18:19,320 - loaders.id_loader - INFO - Loading 589 identification records into client database
+2025-04-03 22:18:19,320 - core.connection - INFO - Bulk inserting 589 rows into identification
+2025-04-03 22:18:19,338 - loaders.id_loader - INFO - Successfully loaded 589 identification records
+2025-04-03 22:18:19,338 - transformers.phone_transformer - INFO - Transforming 1000 patient records to phone records
+2025-04-03 22:18:19,399 - transformers.phone_transformer - INFO - Transformed 771 phone records
+2025-04-03 22:18:19,399 - loaders.phone_loader - INFO - Loading 771 phone records into client database
+2025-04-03 22:18:19,399 - core.connection - INFO - Bulk inserting 771 rows into phone
+2025-04-03 22:18:19,417 - loaders.phone_loader - INFO - Successfully loaded 771 phone records
+2025-04-03 22:18:19,417 - etl.migrations.client_migration - INFO - Batch 8 complete
+2025-04-03 22:18:19,418 - etl.migrations.client_migration - INFO - Processing batch 9
+2025-04-03 22:18:19,419 - transformers.person_transformer - INFO - Transforming 990 patient records to person records
+2025-04-03 22:18:32,224 - transformers.person_transformer - INFO - Transformed 990 person records
+2025-04-03 22:18:32,336 - etl.migrations.client_migration - INFO - Saved 990 mappings to database
+2025-04-03 22:18:32,336 - loaders.person_loader - INFO - Loading 990 person records into client database
+2025-04-03 22:18:32,337 - core.connection - ERROR - Error executing query: List argument must consist only of tuples or dictionaries
+2025-04-03 22:18:32,337 - loaders.person_loader - WARNING - Could not check for existing records: List argument must consist only of tuples or dictionaries
+2025-04-03 22:18:32,338 - core.connection - INFO - Bulk inserting 990 rows into person
+2025-04-03 22:18:32,408 - loaders.person_loader - INFO - Successfully loaded 990 person records
+2025-04-03 22:18:32,408 - transformers.id_transformer - INFO - Transforming 990 patient records to identification records
+2025-04-03 22:18:32,465 - transformers.id_transformer - INFO - Transformed 632 identification records
+2025-04-03 22:18:32,465 - loaders.id_loader - INFO - Loading 632 identification records into client database
+2025-04-03 22:18:32,465 - core.connection - INFO - Bulk inserting 632 rows into identification
+2025-04-03 22:18:32,483 - loaders.id_loader - INFO - Successfully loaded 632 identification records
+2025-04-03 22:18:32,483 - transformers.phone_transformer - INFO - Transforming 990 patient records to phone records
+2025-04-03 22:18:32,539 - transformers.phone_transformer - INFO - Transformed 568 phone records
+2025-04-03 22:18:32,540 - loaders.phone_loader - INFO - Loading 568 phone records into client database
+2025-04-03 22:18:32,540 - core.connection - INFO - Bulk inserting 568 rows into phone
+2025-04-03 22:18:32,553 - loaders.phone_loader - INFO - Successfully loaded 568 phone records
+2025-04-03 22:18:32,553 - etl.migrations.client_migration - INFO - Batch 9 complete
+2025-04-03 22:18:32,554 - etl.migrations.client_migration - INFO - Starting relationship migration
+2025-04-03 22:18:32,554 - etl.migrations.client_relationship_migration - INFO - Starting relationship data migration
+2025-04-03 22:18:32,554 - extractors.family_info_extractor - INFO - Extracting family information data
+2025-04-03 22:18:32,557 - extractors.family_info_extractor - INFO - Extracted 112 family information records
+2025-04-03 22:18:32,557 - transformers.relationship_transformer - INFO - Transforming family information to relationship data
+2025-04-03 22:18:32,564 - transformers.relationship_transformer - INFO - Transformed 112 relationship records
+2025-04-03 22:18:32,573 - core.connection - INFO - Bulk inserting 112 rows into relationship
+2025-04-03 22:18:32,580 - loaders.relationship_loader - INFO - Loaded 112 relationship records
+2025-04-03 22:18:32,580 - etl.migrations.client_relationship_migration - INFO - Relationship migration complete - loaded 112 records
+2025-04-03 22:18:32,580 - etl.migrations.client_migration - INFO - Client data migration complete
+2025-04-03 22:18:32,584 - etl.manager - INFO - Client migration completed
+2025-04-03 22:18:32,584 - etl.manager - INFO - Starting consultation migration
+2025-04-03 22:18:32,584 - etl.migrations.consultation_migration - INFO - Starting consultation data migration
+2025-04-03 22:18:32,584 - etl.migrations.consultation_migration - INFO - Fetching site ID from MRS database
+2025-04-03 22:18:32,584 - core.connection - INFO - Created engine for mrs database
+2025-04-03 22:18:35,337 - etl.migrations.consultation_migration - INFO - Site ID: ZW020343
+2025-04-03 22:18:35,337 - etl.migrations.consultation_migration - INFO - Extracting patient data from source database
+2025-04-03 22:18:35,337 - extractors.patient_extractor - INFO - Extracting all patients from tblpatients
+2025-04-03 22:18:35,632 - etl.migrations.consultation_migration - INFO - Creating person reference data from mapping
+2025-04-03 22:18:35,639 - etl.migrations.consultation_migration - INFO - Processing batch 1
+2025-04-03 22:18:35,643 - transformers.art_transformer - INFO - Transforming 1000 patient records to art records
+2025-04-03 22:18:35,759 - transformers.art_transformer - INFO - Transformed 1000 art records
+2025-04-03 22:18:35,760 - loaders.art_loader - INFO - Loading 1000 art records into consultation database
+2025-04-03 22:18:35,760 - core.connection - INFO - Created engine for consultation database
+2025-04-03 22:18:35,762 - core.connection - INFO - Bulk inserting 1000 rows into art
+2025-04-03 22:18:35,863 - loaders.art_loader - INFO - Successfully loaded 1000 art records
+2025-04-03 22:18:35,863 - etl.migrations.consultation_migration - INFO - Batch 1 complete
+2025-04-03 22:18:35,864 - etl.migrations.consultation_migration - INFO - Processing batch 2
+2025-04-03 22:18:35,867 - transformers.art_transformer - INFO - Transforming 1000 patient records to art records
+2025-04-03 22:18:35,985 - transformers.art_transformer - INFO - Transformed 1000 art records
+2025-04-03 22:18:35,986 - loaders.art_loader - INFO - Loading 1000 art records into consultation database
+2025-04-03 22:18:35,986 - core.connection - INFO - Bulk inserting 1000 rows into art
+2025-04-03 22:18:36,060 - loaders.art_loader - INFO - Successfully loaded 1000 art records
+2025-04-03 22:18:36,061 - etl.migrations.consultation_migration - INFO - Batch 2 complete
+2025-04-03 22:18:36,061 - etl.migrations.consultation_migration - INFO - Processing batch 3
+2025-04-03 22:18:36,064 - transformers.art_transformer - INFO - Transforming 1000 patient records to art records
+2025-04-03 22:18:36,181 - transformers.art_transformer - INFO - Transformed 1000 art records
+2025-04-03 22:18:36,182 - loaders.art_loader - INFO - Loading 1000 art records into consultation database
+2025-04-03 22:18:36,182 - core.connection - INFO - Bulk inserting 1000 rows into art
+2025-04-03 22:18:36,255 - loaders.art_loader - INFO - Successfully loaded 1000 art records
+2025-04-03 22:18:36,256 - etl.migrations.consultation_migration - INFO - Batch 3 complete
+2025-04-03 22:18:36,256 - etl.migrations.consultation_migration - INFO - Processing batch 4
+2025-04-03 22:18:36,259 - transformers.art_transformer - INFO - Transforming 1000 patient records to art records
+2025-04-03 22:18:36,377 - transformers.art_transformer - INFO - Transformed 1000 art records
+2025-04-03 22:18:36,377 - loaders.art_loader - INFO - Loading 1000 art records into consultation database
+2025-04-03 22:18:36,378 - core.connection - INFO - Bulk inserting 1000 rows into art
+2025-04-03 22:18:36,427 - loaders.art_loader - INFO - Successfully loaded 1000 art records
+2025-04-03 22:18:36,427 - etl.migrations.consultation_migration - INFO - Batch 4 complete
+2025-04-03 22:18:36,428 - etl.migrations.consultation_migration - INFO - Processing batch 5
+2025-04-03 22:18:36,431 - transformers.art_transformer - INFO - Transforming 1000 patient records to art records
+2025-04-03 22:18:36,546 - transformers.art_transformer - INFO - Transformed 1000 art records
+2025-04-03 22:18:36,547 - loaders.art_loader - INFO - Loading 1000 art records into consultation database
+2025-04-03 22:18:36,547 - core.connection - INFO - Bulk inserting 1000 rows into art
+2025-04-03 22:18:36,597 - loaders.art_loader - INFO - Successfully loaded 1000 art records
+2025-04-03 22:18:36,597 - etl.migrations.consultation_migration - INFO - Batch 5 complete
+2025-04-03 22:18:36,597 - etl.migrations.consultation_migration - INFO - Processing batch 6
+2025-04-03 22:18:36,600 - transformers.art_transformer - INFO - Transforming 1000 patient records to art records
+2025-04-03 22:18:36,719 - transformers.art_transformer - INFO - Transformed 1000 art records
+2025-04-03 22:18:36,719 - loaders.art_loader - INFO - Loading 1000 art records into consultation database
+2025-04-03 22:18:36,720 - core.connection - INFO - Bulk inserting 1000 rows into art
+2025-04-03 22:18:36,774 - loaders.art_loader - INFO - Successfully loaded 1000 art records
+2025-04-03 22:18:36,774 - etl.migrations.consultation_migration - INFO - Batch 6 complete
+2025-04-03 22:18:36,775 - etl.migrations.consultation_migration - INFO - Processing batch 7
+2025-04-03 22:18:36,778 - transformers.art_transformer - INFO - Transforming 1000 patient records to art records
+2025-04-03 22:18:36,887 - transformers.art_transformer - INFO - Transformed 1000 art records
+2025-04-03 22:18:36,887 - loaders.art_loader - INFO - Loading 1000 art records into consultation database
+2025-04-03 22:18:36,887 - core.connection - INFO - Bulk inserting 1000 rows into art
+2025-04-03 22:18:36,941 - loaders.art_loader - INFO - Successfully loaded 1000 art records
+2025-04-03 22:18:36,942 - etl.migrations.consultation_migration - INFO - Batch 7 complete
+2025-04-03 22:18:36,942 - etl.migrations.consultation_migration - INFO - Processing batch 8
+2025-04-03 22:18:36,945 - transformers.art_transformer - INFO - Transforming 1000 patient records to art records
+2025-04-03 22:18:37,048 - transformers.art_transformer - INFO - Transformed 1000 art records
+2025-04-03 22:18:37,049 - loaders.art_loader - INFO - Loading 1000 art records into consultation database
+2025-04-03 22:18:37,049 - core.connection - INFO - Bulk inserting 1000 rows into art
+2025-04-03 22:18:37,103 - loaders.art_loader - INFO - Successfully loaded 1000 art records
+2025-04-03 22:18:37,103 - etl.migrations.consultation_migration - INFO - Batch 8 complete
+2025-04-03 22:18:37,103 - etl.migrations.consultation_migration - INFO - Processing batch 9
+2025-04-03 22:18:37,107 - transformers.art_transformer - INFO - Transforming 990 patient records to art records
+2025-04-03 22:18:37,213 - transformers.art_transformer - INFO - Transformed 990 art records
+2025-04-03 22:18:37,214 - loaders.art_loader - INFO - Loading 990 art records into consultation database
+2025-04-03 22:18:37,214 - core.connection - INFO - Bulk inserting 990 rows into art
+2025-04-03 22:18:37,261 - loaders.art_loader - INFO - Successfully loaded 990 art records
+2025-04-03 22:18:37,261 - etl.migrations.consultation_migration - INFO - Batch 9 complete
+2025-04-03 22:18:37,262 - etl.migrations.consultation_migration - INFO - Consultation data migration complete
+2025-04-03 22:18:37,267 - etl.manager - INFO - Consultation migration completed
+2025-04-03 22:18:37,267 - etl.manager - INFO - Starting report migration
+2025-04-03 22:18:37,267 - etl.migrations.report_migration - INFO - Starting report data migration
+2025-04-03 22:18:37,267 - etl.migrations.report_migration - INFO - Report migration not fully implemented yet
+2025-04-03 22:18:37,267 - etl.migrations.report_migration - INFO - Report data migration complete
+2025-04-03 22:18:37,267 - etl.manager - INFO - Report migration completed
+2025-04-03 22:18:37,267 - etl.manager - INFO - All migrations completed
+2025-04-03 22:18:37,267 - root - INFO - ETL application completed in 211.42 seconds
+2025-04-03 22:18:37,267 - root - INFO - Migration statistics: {'client': {'person_extracted': 8990, 'person_loaded': 8990, 'identification_loaded': 5742, 'phone_loaded': 5731, 'relationship_loaded': 112}, 'consultation': {'patient_extracted': 8990, 'art_loaded': 8990}, 'report': {'tables_processed': 0, 'records_migrated': 0}}

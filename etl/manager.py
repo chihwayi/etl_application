@@ -11,7 +11,7 @@ from etl.migrations.report_migration import ReportMigration
 class ETLManager:
     """Manages the ETL process across different database migrations"""
     
-    def __init__(self, batch_size=DatabaseConfig.BATCH_SIZE):
+    def __init__(self, batch_size=DatabaseConfig.BATCH_SIZE, reference_service=None):
         """Initialize the ETL manager
         
         Args:
@@ -19,6 +19,7 @@ class ETLManager:
         """
         self.logger = logging.getLogger(__name__)
         self.batch_size = batch_size
+        self.reference_service = reference_service
         self.stats = defaultdict(dict)
         self.connections = self._setup_connections()
         self.patient_person_mapping = {}

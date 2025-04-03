@@ -64,6 +64,14 @@ class PersonTransformer:
                 patient.get('Occupation')
             )
             
+            # Use reference data for marital status if available
+            #if self.reference_manager:
+                #marital_desc = self.reference_manager.get_reference_value(
+                    #"tblSetupMaritalStatus", "MaritalStatusID", patient.get("MaritalStatus")
+               # )
+                #if marital_desc:
+                   # marital = marital_desc
+            
             # Create person record
             person = {
                 'person_id': person_id,

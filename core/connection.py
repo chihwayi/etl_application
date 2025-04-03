@@ -1,7 +1,7 @@
 import logging
 import pymysql
 import pandas as pd
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 from contextlib import contextmanager
 
 logger = logging.getLogger(__name__)
@@ -59,9 +59,9 @@ class DatabaseConnection:
             with self.get_connection() as conn:
                 logger.debug(f"Executing query on {self.database}: {query}")
                 if params:
-                    result = pd.read_sql(query, conn, params=params)
+                    result = pd.read_sql(text(query), conn, params=params)
                 else:
-                    result = pd.read_sql(query, conn)
+                    result = pd.read_sql(text(query), conn)
                 logger.debug(f"Query returned {len(result)} rows")
                 return result
         except Exception as e:
@@ -70,11 +70,11 @@ class DatabaseConnection:
     
     def execute_update(self, query, params=None):
         """Execute a SQL update/insert query
-        
+    
         Args:
             query (str): SQL query string
-            params (tuple or list, optional): Parameters for the query
-            
+            params (tuple, dict, or list, optional): Parameters for the query
+        
         Returns:
             int: Number of affected rows
         """
@@ -82,10 +82,25 @@ class DatabaseConnection:
             with self.get_connection() as conn:
                 with conn.begin() as transaction:
                     logger.debug(f"Executing update on {self.database}: {query}")
-                    if params:
-                        result = conn.execute(query, params)
+                    logger.debug(f"Parameters: {params} (type: {type(params)})")
+                
+                    # Wrap query in text()
+                    sql = text(query)
+                
+                    if params is None:
+                        result = conn.execute(sql)
+                    elif isinstance(params, tuple):
+                        # For single row with positional parameters, wrap in a list
+                        result = conn.execute(sql, [params])
+                    elif isinstance(params, dict):
+                        # For single row with named parameters
+                        result = conn.execute(sql, params)
+                    elif isinstance(params, list):
+                        # For batch updates with list of tuples or dictionaries
+                        result = conn.execute(sql, params)
                     else:
-                        result = conn.execute(query)
+                        raise ValueError("Params must be a tuple, dictionary, or list of tuples/dictionaries")
+                
                     affected_rows = result.rowcount
                     logger.debug(f"Update affected {affected_rows} rows")
                     return affected_rows
